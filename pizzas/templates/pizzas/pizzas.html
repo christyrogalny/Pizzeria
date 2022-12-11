@@ -1,0 +1,30 @@
+{% extends "pizzas/base.html" %} 
+{% load static %}
+
+{% block content %}
+
+<body style="background-color:darkgray">
+</body>
+
+<h1 style="font-family:'Copperplate';font-size:220%;color:darkred">
+Pizzas: {{ pizzas }}
+</h1>
+
+<ul>
+    {% for t in toppings %}
+    <li style="font-family:'Didot';font-size:130%;">
+        {{ t }}
+    </li>
+
+    {% empty %}
+    <li> No toppings for this pizza has been added yet. </li>
+    {% endfor %}
+</ul>
+
+<br><br>
+
+<p>Comments:</p> 
+<a href="{% url 'pizzas:addcomment' pizza_id %}">Add a new comment</a>
+
+
+{% endblock content %} 

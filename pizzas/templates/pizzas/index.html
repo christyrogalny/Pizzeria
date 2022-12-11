@@ -1,0 +1,27 @@
+{% extends "pizzas/base.html" %} 
+
+{% block content %}
+
+{% load static %}
+
+<body style="background-color:darkgray">
+</body>
+
+<h1 style="font-family:'Bodoni 72 Smallcaps';font-size:300%;color:darkred">
+    <strong>Welcome to the Pizzeria!</strong>
+</h1>
+
+
+<p style="font-family:'Copperplate';color:black;font-size:120%">
+    Select 'Pizzas' to view our available pizzas!
+</p>
+
+
+<html>
+<body>
+    
+    <img src="{% static 'homepizza.jpeg' %}">
+</body>
+</html>
+
+{% endblock content %} 

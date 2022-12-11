@@ -1,0 +1,42 @@
+{% extends "pizzas/base.html" %} 
+
+{% block content %}
+
+{% load static %}
+
+<body style="background-color:darkgray">
+</body>
+
+
+<h1 style="font-family:'Copperplate';font-size:220%;color:darkred">
+    Available Pizzas
+</h1>
+
+
+<ul>
+    {% for p in all_pizza %}
+
+    <li> 
+        <a href="{% url 'pizzas:pizzas' p.id %}"> 
+            <p style="font-family:'Didot';font-size:130%;">
+                {{ p }}</a></li></p>
+    </li>
+
+
+    {% empty %}
+    <li> No pizzas have been added yet. </li>
+    {% endfor %}
+
+</ul>
+<html>
+<body>
+
+    <img src="{% static 'hawaiianpizza.jpg' %}">
+    <img src="{% static 'meatlovers.jpeg' %}">
+    <img src="{% static 'veggiepizza.jpg' %}">
+    <img src="{% static 'cheesepizza.jpeg' %}">
+
+</body>
+</html>
+
+{% endblock content %} 
