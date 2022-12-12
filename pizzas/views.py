@@ -26,11 +26,12 @@ def pizzas(request, pizza_id):
 def addcomment(request, pizza_id):
     if request.method == 'POST' and request.POST.get("btn1"):
         comment = request.POST.get("comment") 
-        Comment.objects.create(pizza_id=pizza_id, text=comment)
+        pizza = request.POST.get("id") 
+        Comment.objects.create(pizza=pizza_id, text=comment)
+        #Comment.objects.create(text=comment)
 
     addcomment = Comment.objects.filter(pizza=pizza_id)
     pizza = Pizza.objects.get(id=pizza_id)
 
     context = {'pizza':pizza, 'addcomment':addcomment}
     return render(request, 'pizzas/addcomment.html', context)
-    
