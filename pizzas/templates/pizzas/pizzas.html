@@ -23,12 +23,8 @@ Pizzas: {{ pizzas }}
 
 <br><br>
 
-<p>Comments:</p> 
-{% for c in addcomment %}
-    <a href="{% url 'pizzas:addcomment' c.id %}">Add a new comment</a>
-{% empty %} 
-<p>There are no comments yet.</p>
-{% endfor %}
+<td>Comments: &nbsp <a href="{% url 'pizzas:addcomment' 1 %}">Add a new comment</a>
+</td>
 
 
 {% endblock content %} 

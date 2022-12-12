@@ -18,14 +18,13 @@ class Topping(models.Model):
     pizza_name = models.TextField()
 
     def __str__(self):
-        #return f"{self.pizza_name[:50]}..." 
         return self.pizza_name 
 
 ## comments 
 class Comment(models.Model):
-    post = models.ForeignKey(Pizza,on_delete=models.CASCADE,related_name='comments')
+    pizza = models.ForeignKey(Pizza,on_delete=models.CASCADE,related_name='comments')
     name = models.CharField(max_length=80)
     text = models.TextField(max_length=200)
 
     def __str__(self):
-        return self.name, self.text
+        return self.text

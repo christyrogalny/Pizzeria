@@ -2,17 +2,17 @@
 
 {% block content %}
 
-<h1>Comment on:</h1>
-<br><br>
+<h2><p>Pizza: {{ pizza.pizza_name }} </p></h2>
 
 <form method="POST">
     {% csrf_token %} 
-    {% for c in addcomment %}
-    <li>
+    {{ form.as_p }}
+    {% for c in comments %}
+    <ul>
         <p>{{ c.name }} -- {{ c.text }}</p>
-    </li>
+    </ul>
     {% empty %} 
-    <li>There are no comments for this post.</li>
+    <ul>There are no comments for this post.</ul>
     {% endfor %} 
 
 <p><input type="text" name="comment"></p>
